@@ -9,7 +9,7 @@ exports.config = {
     runner: 'local',
     //
     // Override default path ('/wd/hub') for chromedriver service.
-    path: '/',
+    //path: '/',
     //
     // ==================
     // Specify Test Files
@@ -49,7 +49,6 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [{
-    
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
@@ -98,7 +97,7 @@ exports.config = {
     waitforTimeout: 10000,
     //
     // Default timeout in milliseconds for request
-    // if browser driver or grid doesn't send response
+    // if Selenium Grid doesn't send response
     connectionRetryTimeout: 90000,
     //
     // Default request retries count
@@ -125,14 +124,14 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: ['spec'],
- 
+    
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000,
-        compilers:['js:@babel/register']
+        compilers: ['js:@babel/register']
     },
     //
     // =====
@@ -164,8 +163,8 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-     before: function (capabilities, specs) {
-        require('@babel/register')
+    before: function (capabilities, specs) {
+        require('@babel/register');
     },
     /**
      * Runs before a WebdriverIO command gets executed.
@@ -181,29 +180,29 @@ exports.config = {
     // beforeSuite: function (suite) {
     // },
     /**
-     * Function to be executed before a test (in Mocha/Jasmine) starts.
+     * Function to be executed before a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
+     * @param {Object} test test details
      */
-    // beforeTest: function (test, context) {
+    // beforeTest: function (test) {
     // },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
      */
-    // beforeHook: function (test, context) {
+    // beforeHook: function () {
     // },
     /**
      * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)
      */
-    // afterHook: function (test, context, { error, result, duration, passed, retries }) {
+    // afterHook: function () {
     // },
     /**
-     * Function to be executed after a test (in Mocha/Jasmine).
+     * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
+     * @param {Object} test test details
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    // afterTest: function (test) {
     // },
-
-
     /**
      * Hook that gets executed after the suite has ended
      * @param {Object} suite suite details
