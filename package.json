@@ -4,7 +4,7 @@
   "description": "WebdriverIO Version 5 Automation Framework",
   "main": "index.js",
   "scripts": {
-    "selenium-server": "selenium-standalone start",
+    "selenium-server": "selenium-standalone install",
     "test": "wdio wdio.conf.js"
   },
   "keywords": [
@@ -25,7 +25,7 @@
     "@wdio/selenium-standalone-service": "^5.12.1",
     "@wdio/spec-reporter": "^5.12.1",
     "@wdio/sync": "^5.12.3",
-    "chromedriver": "^76.0.0",
+    "chromedriver": "^81.0.0",
     "mocha": "^6.2.0",
     "selenium-standalone": "^6.16.0",
     "wdio-chromedriver-service": "^5.0.2",
