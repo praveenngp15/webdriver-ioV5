@@ -2,3 +2,6 @@ Wait
 waitForExist -> Presence in DOM
 waitForDisplayed -.> Visible in DOM and Webpage
 waitForEnabled -> Check both enabled or disabled condition
+
+addValue -> append the text
+setValue -> clears the value and enter the text
