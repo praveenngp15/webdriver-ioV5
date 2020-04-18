@@ -1,0 +1,4 @@
+Wait
+waitForExist -> Presence in DOM
+waitForDisplayed -.> Visible in DOM and Webpage
+waitForEnabled -> Check both enabled or disabled condition
